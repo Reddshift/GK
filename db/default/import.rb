@@ -6,7 +6,7 @@ format_option_type = OptionType.find_or_create_by_name_and_presentation("Format"
 last_row_id = nil
 last_p = nil
 
-FasterCSV.foreach(Rails.root.join( "/home/mredd/gk/gkbooks/db/import/osc_export.csv")) do |row|
+FasterCSV.foreach(Rails.root.to_s + "/db/import/osc_export.csv") do |row|
   if row[0] == last_row_id # set up product variant
     v = Variant.create :product => last_p, :price => row[7]
     v.option_values = [OptionValue.find_or_create_by_name_and_presentation_and_option_type_id(row[6], row[6], format_option_type.id)]
