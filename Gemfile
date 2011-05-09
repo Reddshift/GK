@@ -9,6 +9,8 @@ gem 'fastercsv'
 gem 'pg'
 
 gem 'spree'
+gem 'spree_heroku', '1.0.0', :git => 'git://github.com/paxer/spree-heroku.git'
+gem 'aws-s3'
 
 # Use unicorn as the web server
 # gem 'unicorn'
