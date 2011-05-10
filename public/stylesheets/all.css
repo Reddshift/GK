@@ -283,8 +283,8 @@ a { outline: none; }
 /*
 body.two-col #wrapper { background-image: url(../images/wrapper-back-2.png); }
 */
-ul#gk_nav { height: 27px; background-color: #222; color: #FFF; padding: 10px 85px; margin: 15px 0;}
-ul#gk_nav li { list-style-type: none; float: left; font-weight: bold; font-size: 18px; padding-right: 40px;}
+ul#gk_nav { height: 24px; background-color: #222; color: #FFF; padding: 10px 65px; margin: 15px 0;}
+ul#gk_nav li { list-style-type: none; float: left; font-weight: bold; font-size: 14px; padding-right: 15px;}
 .container {
   width: 950px;
   margin: 0 auto;
