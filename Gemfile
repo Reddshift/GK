@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.5'
+gem 'rails', '3.0.7'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -8,8 +8,8 @@ gem 'rails', '3.0.5'
 gem 'fastercsv'
 gem 'pg'
 
-gem 'spree'
-gem 'spree_heroku', '1.0.0', :git => 'git://github.com/paxer/spree-heroku.git'
+gem 'spree', '0.50.2'
+gem 'spree_heroku', :git => 'git://github.com/paxer/spree-heroku.git'
 gem 'aws-s3'
 
 # Use unicorn as the web server
