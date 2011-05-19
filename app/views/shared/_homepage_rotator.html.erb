@@ -1,0 +1,22 @@
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#product_rotator').cycle({
+      fx: 'scrollLeft', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+      timeout: 5000,
+      pager: '#product_rotator_uh'
+    });
+  });
+</script>
+
+<div id="product_rotator">
+<% count = 0 %>
+<% Taxonomy.find_by_name('Rotator').root.products.each do |product| %>
+  <% if count % 3 == 0 %>
+    <% if count != 0 %></div><% end %>
+    <div>
+  <% end %>
+    <%= link_to product_image(product), product %>
+  <% count += 1 %>
+<% end %>
+    </div>
+</div>
