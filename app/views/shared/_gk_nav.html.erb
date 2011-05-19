@@ -1,19 +1,10 @@
 
 
-<ul id="gk_nav">
+<div id="gk_nav"><ul>
 <% Taxonomy.find_by_name('Books') .root.children.each do |taxon| %>
   <li>
     <%= link_to taxon.name, seo_url(taxon) %>
   </li>
 <% end %>
 
-
-
-  <li>HISTORY</li>
-  <li>PHILOSOPHY & THEOLOGY</li>
-  <li>BIOGRAPHY</li>
-  <li>SCIENCE & RELIGION</li>
-  <li>DOCUMENTARY</li>
-  <li>SCRIPTURE STUDY</li>
-  <li>CURRENT EVENTS</li>
-</ul>
+</ul></div>

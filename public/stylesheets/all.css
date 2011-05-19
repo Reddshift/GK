@@ -283,8 +283,11 @@ a { outline: none; }
 /*
 body.two-col #wrapper { background-image: url(../images/wrapper-back-2.png); }
 */
-ul#gk_nav { height: 24px; background-color: #222; color: #FFF; padding: 10px 65px; margin: 15px 0;}
-ul#gk_nav li { list-style-type: none; float: left; font-weight: bold; font-size: 14px; padding-right: 15px;}
+div#gk_nav { height: 24px; background-color: #222; margin: 15px 0; padding: 10px 0;}
+#gk_nav ul {auto; width: 950px; margin: 0 auto;}
+#gk_nav ul li { list-style-type: none; float: left; padding-right: 15px;}
+#gk_nav ul li a {font-weight: bold; font-size: 14px; color: #FFF; text-decoration: none; text-transform: uppercase;}
+#gk_nav ul li a:hover {text-decoration: underline;}
 .container {
   width: 950px;
   margin: 0 auto;
