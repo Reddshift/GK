@@ -405,6 +405,7 @@ p img {
 }
 .breadcrumbs ul li span { color: #333333; }
 div#login-bar { display: inline; }
+div#search-bar { float: right; clear:right; margin: 65px 0 0 0;}
 ul#language-bar {
   list-style-type: none;
   margin: 0px;

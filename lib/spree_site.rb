@@ -4,7 +4,7 @@ module SpreeSite
   class Engine < Rails::Engine
     def self.activate
       # Add your custom site logic here
-      Gateway::Elavon.register
+      Gateway::Elavon.register # make sure our custom gateway is registered
     end
     
     def load_tasks
