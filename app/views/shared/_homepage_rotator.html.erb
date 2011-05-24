@@ -1,7 +1,7 @@
 <script type="text/javascript">
   $(document).ready(function() {
     $('#product_rotator').cycle({
-      fx: 'scrollLeft', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+      fx: 'scrollHorz', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
       timeout: 0,
       next: '#product_rotator_next',
       prev: '#product_rotator_prev'
@@ -18,7 +18,7 @@
         <% if count != 0 %></div><% end %>
         <div class="rotator_set">
       <% end %>
-        <div class="product_rotator_img_wrapper <% if count % 3 == 0 %> pr_first_img<% end %>">
+        <div class="product_rotator_img_wrapper">
           <%= link_to product_image(product), product %>
         </div>
       <% count += 1 %>
