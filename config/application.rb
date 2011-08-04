@@ -41,8 +41,5 @@ module Gkdemo
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
-
-    # try to get some additional logging...
-    config.logger = Logger.new(STDOUT)
   end
 end
