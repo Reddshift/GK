@@ -4,6 +4,7 @@ class Gateway::Elavon < Gateway
 
   def provider_class
     ActiveMerchant::Billing::ElavonGateway
+    puts "I was here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
   end
 
 end
