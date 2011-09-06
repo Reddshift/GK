@@ -32,4 +32,10 @@ Gkdemo::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+
+  # secure test env 
+  config.middleware.insert_after(::Rack::Lock, "::Rack::Auth::Basic", "Staging") do |u, p|
+    [u, p] == ['test', 'chickencowhorsepig']
+  end
+
 end
