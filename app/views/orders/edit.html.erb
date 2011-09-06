@@ -27,6 +27,11 @@
           <div class="links">
             <%= link_to image_tag('/images/update.png') + t("update"), '#', :class => 'button checkout primary', :onclick => "$('form#updatecart').submit(); return false;" %>
             <%= link_to image_tag('/images/checkout.png') + t("checkout"), checkout_path, :class => 'button checkout primary' %>
+ 
+            <br/>
+            <br/>
+            <strong>PLEASE NOTE:</strong> We can only ship to the U.S.
+  
           </div>
         </div>
 
@@ -35,7 +40,7 @@
       <% end %>
     <% end %>
   <% end %>
-  
+
   <%= form_tag empty_cart_path, :method => :put do %>
     <p id="clear_cart_link">
       <input type="submit" value="<%= t('empty_cart') %>" class="button" />
