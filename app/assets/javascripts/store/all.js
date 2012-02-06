@@ -10,5 +10,6 @@
 //= require store/spree_api
 //= require store/spree_dash
 //= require store/spree_promo
+//= require jquery.cycle.all.min
 
 //= require_tree .

@@ -1,0 +1,9 @@
+body.two-col #content { width: 950px; }
+div#search-bar { float: right; clear:right; margin: 65px 0 0 0;}
+div#product_rotator_cont { background-color: #EEE; padding: 15px 50px; height: 270px; width: 850px; position:relative;}
+div#product_rotator { height: 270px;}
+div#product_rotator div.rotator_set { width: 850px; display: none;}
+div#product_rotator div img {position: absolute; margin: auto; top:0; left:0; right:0; bottom:0;}
+div.product_rotator_img_wrapper {float: left; margin: 15px 21px;  display: block; height: 240px; width: 240px; text-align: center; background-color: #FFF; position: relative;}
+#product_rotator_prev {float: left; display: block; width: 40px; position: absolute; top: 0; left: 0;}
+#product_rotator_next {float: left; display: block; width: 40px; position: absolute; top: 0; right: 0;}
