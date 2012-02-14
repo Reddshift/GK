@@ -1,10 +1,10 @@
 development:
-  bucket: gkbooks_dev
+  bucket: gkbooks
   access_key_id: AKIAJQ3TF4OKDRVVXDWA
   secret_access_key: 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
 
 test:
-  bucket: gkbooks_dev
+  bucket: gkbooks
   access_key_id: AKIAJQ3TF4OKDRVVXDWA
   secret_access_key: 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
 
