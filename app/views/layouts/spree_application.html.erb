@@ -1,10 +1,50 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<%= hook :inside_head do %>
-  <%= render :partial => 'shared/head'%>
-<% end %>
-</head>
+  <head data-hook="inside_head">
+    <%= render 'shared/head' %>
+  </head>
+  <body class="one-col" id="<%= @body_id || 'default' %>" data-hook="body">
+    <div id="header" class="container_bg" data-hook>
+      <div class="container">
+        <div id="login-bar">
+          <ul id="nav-bar" data-hook>
+            <%= render 'shared/nav_bar' %>
+          </ul>
+        </div>
+        <div id="search-bar"><%= render 'shared/search' %></div>
+        <div id="logo" data-hook><%= logo "/images/moroni_gkb.png" %></div>
+      </div>
+    </div>
+
+    <%= render :partial => 'shared/gk_nav' %>
+
+    <div id="wrapper" class="container" data-hook>
+      <%#removed the sidebar content yield %>
+
+      <div id="content">
+        <%= breadcrumbs(@taxon) %>
+        <%= flash_messages %>
+        <div id="rotator" data-hook></div>
+        <%= yield %>
+      </div>
+      
+    </div>
+
+    <div id="footer" class="container" data-hook>
+      <div id="footer-left" data-hook>
+        <%= t(:powered_by) %> <%= link_to 'Spree', 'http://spreecommerce.com/' %>
+      </div>
+      <div id="footer-right" data-hook><%= render :partial => 'shared/footer_gk'%></div>
+    </div>
+    <%= render 'shared/google_analytics' %>
+
+  </body>
+</html>
+
+
+
+
+<body class="<%= @body_class %>" id="<%= @body_id %>">
 <%
 if @body_class.nil?
   if content_for?(:sidebar)
@@ -14,42 +54,3 @@ if @body_class.nil?
   end
 end
  %>
-<body class="<%= @body_class %>" id="<%= @body_id %>">
-  <div id="header" class="container_bg">
-    <div class="container">
-    <div id="login-bar">
-      <ul id="nav-bar">
-        <%= render 'shared/nav_bar' %>
-      </ul>
-    </div>
-    <div id="search-bar"><%= render 'shared/search' %></div>
-  <%= logo "/images/moroni_gkb.png" %>
-  </div>
-  </div>
-
-  <%= render :partial => 'shared/gk_nav' %>
-
-  <div id="wrapper" class="container">
-    <% if content_for?(:sidebar) %>
-    <div id="sidebar">
-      <%= hook :sidebar do %>
-        <%= yield :sidebar %>
-      <% end %>
-    </div>
-    <% end %>
-
-    <div id="content">
-      <%= breadcrumbs(@taxon) if @taxon %>
-      <% if flash.notice %>
-      <div class="flash notice"><%= flash.notice %></div>
-      <% end %>
-      <% if flash[:error] %>
-      <div class="flash errors"><%= flash[:error] %></div>
-      <% end %>
-      <%= yield %>
-    </div>
-    <%#= render :partial => 'shared/footer'%>
-  </div>
-
-</body>
-</html>
