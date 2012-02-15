@@ -172,6 +172,12 @@ ActiveRecord::Schema.define(:version => 20120206073717) do
     t.datetime "updated_at"
   end
 
+  create_table "newsletter_subscriptions", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "email"
+  end
+
   create_table "option_types", :force => true do |t|
     t.string   "name",         :limit => 100
     t.string   "presentation", :limit => 100

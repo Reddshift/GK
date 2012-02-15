@@ -10,6 +10,7 @@ gem 'pg'
 
 gem 'spree', '0.70.3'
 gem 'spree_heroku', :git => 'git://github.com/paxer/spree-heroku.git'
+gem 'spree_mail_chimp', :git => 'git://github.com/Reddshift/spree_mail_chimp.git'
 gem 'aws-s3'
 
 

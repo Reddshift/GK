@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/Reddshift/spree_mail_chimp.git
+  revision: 1871b8e5665b7043c57bf723becfebe25ca1913b
+  specs:
+    spree_mail_chimp (0.60.0)
+      hominid (>= 2.2.0)
+      spree_core (>= 0.50.0)
+
+GIT
   remote: git://github.com/paxer/spree-heroku.git
   revision: cb091aafd88103d209e86f884386945917193b76
   specs:
@@ -75,6 +83,7 @@ GEM
     fastercsv (1.5.4)
     highline (1.6.2)
     hike (1.2.1)
+    hominid (3.0.4)
     i18n (0.6.0)
     jquery-rails (1.0.19)
       railties (~> 3.0)
@@ -214,4 +223,5 @@ DEPENDENCIES
   sass-rails (~> 3.1.0)
   spree (= 0.70.3)
   spree_heroku!
+  spree_mail_chimp!
   uglifier
