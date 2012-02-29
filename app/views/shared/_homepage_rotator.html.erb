@@ -1,29 +1,32 @@
-<script type="text/javascript">
-  $(document).ready(function() {
-    $('#product_rotator').cycle({
-      fx: 'scrollHorz', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
-      timeout: 0,
-      next: '#product_rotator_next',
-      prev: '#product_rotator_prev'
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#product_rotator').cycle({
+        fx: 'scrollHorz', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+        timeout: 0,
+        next: '#product_rotator_next',
+        prev: '#product_rotator_prev'
+      });
     });
-  });
-</script>
+  </script>
 
-<div id="product_rotator_cont">
-  <a href="#" id="product_rotator_prev" href="#" ><img src="/images/rotator_left_arrow.gif"/></a>
-  <div id="product_rotator">
-    <% count = 0 %>
-    <% Taxonomy.find_by_name('Rotator').root.products.each do |product| %>
-      <% if count % 3 == 0 %>
-        <% if count != 0 %></div><% end %>
-        <div class="rotator_set">
+  <div id="product_rotator_cont">
+    <a href="#" id="product_rotator_prev" href="#" ><img src="/images/rotator_left_arrow.gif"/></a>
+    <div id="product_rotator">
+      <% 
+        count = 0
+        sets = []
+        sets[0] = "" 
+        Taxonomy.find_by_name('Rotator').root.products.each do |product| 
+          sets[(count/3)] = '' if sets[count/3].nil?
+          sets[(count/3)] += '<div class="product_rotator_img_wrapper">' + link_to(product_image(product), product) + '</div>'
+          count += 1
+        end 
+      %>
+
+      <% sets.each do |set| %>
+        <div class="rotator_set"><%=raw set%></div>
       <% end %>
-        <div class="product_rotator_img_wrapper">
-          <%= link_to product_image(product), product %>
-        </div>
-      <% count += 1 %>
-    <% end %>
-      </div><%#close last div%>
+    </div>
+    <a href="#" id="product_rotator_next"><img src="/images/rotator_right_arrow.gif"/></a>
   </div>
-  <a href="#" id="product_rotator_next"><img src="/images/rotator_right_arrow.gif"/></a>
-</div>
+  <br/>
