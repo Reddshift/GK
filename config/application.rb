@@ -8,9 +8,21 @@ Bundler.require(:default, Rails.env) if defined?(Bundler)
 
 module Gkdemo
   class Application < Rails::Application
-  require 'spree_site'
-  config.middleware.use "RedirectLegacyProductUrl"
-  config.middleware.use "SeoAssist"
+    config.middleware.use "SeoAssist"
+    config.middleware.use "RedirectLegacyProductUrl"
+
+    config.to_prepare do
+      #loads application's model / class decorators
+      Dir.glob(File.join(File.dirname(__FILE__), "../app/**/*_decorator*.rb")) do |c|
+        Rails.configuration.cache_classes ? require(c) : load(c)
+      end
+
+      #loads application's deface view overrides
+      Dir.glob(File.join(File.dirname(__FILE__), "../app/overrides/*.rb")) do |c|
+        Rails.application.config.cache_classes ? require(c) : load(c)
+      end
+    end
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -41,5 +53,8 @@ module Gkdemo
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+
+    # enable asset pipeline in rails 3.1
+    config.assets.enabled = true
   end
 end
