@@ -8,10 +8,11 @@ gem 'rails', '~> 3.1.0'
 gem 'fastercsv'
 gem 'pg'
 
-gem 'spree', '0.70.3'
+gem 'spree', '0.70.5'
 gem 'spree_heroku', :git => 'git://github.com/paxer/spree-heroku.git'
 gem 'spree_mail_chimp', :git => 'git://github.com/Reddshift/spree_mail_chimp.git'
 gem 'aws-s3'
+gem 'aws-sdk'
 
 
 # Deploy with Capistrano
