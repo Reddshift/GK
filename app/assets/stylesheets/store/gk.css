@@ -760,5 +760,6 @@ div.product_rotator_img_wrapper {float: left; margin: 15px 21px;  display: block
 #product_rotator_next {float: left; display: block; width: 40px; position: absolute; top: 0; right: 0;}
 
 /*social widget styles*/
-#social, #social div, #social a {float: right; }
+#social, #social div, #social iframe {float: right;}
+#social {margin-left: 15px;}
 #social .twitter-share-button {width: 90px; margin-right: 10px;}
