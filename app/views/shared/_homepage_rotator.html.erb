@@ -16,7 +16,7 @@
         count = 0
         sets = []
         sets[0] = "" 
-        Taxonomy.find_by_name('Rotator').root.products.each do |product| 
+        Taxonomy.find_by_name('Rotator').root.products.sort{|a,b| a.meta_keywords.to_i <=> b.meta_keywords.to_i}.each do |product| 
           sets[(count/3)] = '' if sets[count/3].nil?
           sets[(count/3)] += '<div class="product_rotator_img_wrapper">' + link_to(product_image(product), product) + '</div>'
           count += 1
