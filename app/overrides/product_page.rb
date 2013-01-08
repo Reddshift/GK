@@ -9,4 +9,7 @@ Deface::Override.new(:virtual_path  => "products/_cart_form",
 Deface::Override.new(:virtual_path  => "products/_cart_form",
             :remove => "dl#product-price dt",
             :name         => "price_label")
-
+Deface::Override.new(:virtual_path  => "products/show",
+            :insert_before => "div#product-description",
+            :partial      =>  "shared/social",
+            :name         => "twitterbook")
