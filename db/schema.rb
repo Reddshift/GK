@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120206073717) do
+ActiveRecord::Schema.define(:version => 20130108040831) do
 
   create_table "activators", :force => true do |t|
     t.string   "description"
@@ -255,6 +255,14 @@ ActiveRecord::Schema.define(:version => 20120206073717) do
     t.string   "response_code"
     t.string   "avs_response"
   end
+
+  create_table "pending_promotions", :force => true do |t|
+    t.integer "user_id"
+    t.integer "promotion_id"
+  end
+
+  add_index "pending_promotions", ["promotion_id"], :name => "index_pending_promotions_on_promotion_id"
+  add_index "pending_promotions", ["user_id"], :name => "index_pending_promotions_on_user_id"
 
   create_table "preferences", :force => true do |t|
     t.string   "name",       :limit => 100, :null => false

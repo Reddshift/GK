@@ -758,3 +758,8 @@ div#product_rotator div img {position: absolute; margin: auto; top:0; left:0; ri
 div.product_rotator_img_wrapper {float: left; margin: 15px 21px;  display: block; height: 240px; width: 240px; text-align: center; background-color: #FFF; position: relative;}
 #product_rotator_prev {float: left; display: block; width: 40px; position: absolute; top: 0; left: 0;}
 #product_rotator_next {float: left; display: block; width: 40px; position: absolute; top: 0; right: 0;}
+
+/*social widget styles*/
+#social, #social div, #social iframe {float: right;}
+#social {margin-left: 15px;}
+#social .twitter-share-button {width: 90px; margin-right: 10px;}
